@@ -9,14 +9,16 @@
     --color-text-muted: 71 85 105;
     --color-surface: rgba(0, 0, 0, 0.05); /* Light glass */
     --color-surface-hover: rgba(0, 0, 0, 0.08);
+    --glow-color: rgba(139, 92, 246, 0.5); /* Primary glow */
   }
   
   .dark {
     --color-bg: 10 10 10;
     --color-text: 248 250 252;
     --color-text-muted: 148 163 184;
-    --color-surface: rgba(255, 255, 255, 0.05); /* Dark glass */
-    --color-surface-hover: rgba(255, 255, 255, 0.1);
+    --color-surface: rgba(255, 255, 255, 0.03); /* Dark glass */
+    --color-surface-hover: rgba(255, 255, 255, 0.08);
+    --glow-color: rgba(139, 92, 246, 0.5); /* Primary glow */
   }
 
   body {
@@ -26,10 +28,16 @@
 
 @layer utilities {
   .glass {
-    @apply bg-surface backdrop-blur-lg border border-white/10 rounded-2xl shadow-xl transition-all duration-300;
+    @apply bg-surface backdrop-blur-md border border-white/5 dark:border-white/10 rounded-2xl shadow-xl transition-all duration-300;
   }
-  .glass:hover {
-    @apply bg-surfaceHover border-white/20 transform -translate-y-1 shadow-2xl;
+  .glass-panel {
+    @apply bg-surface/50 backdrop-blur-lg border border-white/10 dark:border-white/5 rounded-3xl shadow-2xl relative overflow-hidden transition-all duration-300;
+  }
+  .glass-card {
+    @apply bg-surface backdrop-blur-sm border border-white/5 dark:border-white/10 rounded-2xl shadow-lg transition-all duration-500 relative z-10;
+  }
+  .glass-card:hover {
+    @apply bg-surfaceHover border-white/20 transform -translate-y-2 shadow-[0_0_30px_var(--glow-color)];
   }
 }
 

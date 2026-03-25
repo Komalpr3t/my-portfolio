@@ -8,8 +8,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
   </head>
   <body>
+    <div id="tsparticles" class="fixed inset-0 -z-50 pointer-events-none mix-blend-screen dark:mix-blend-normal opacity-50 dark:opacity-70"></div>
     <div class="bg-blob-1"></div>
     <div class="bg-blob-2"></div>
 
@@ -162,7 +166,7 @@
             <h3 class="text-3xl font-bold mb-12 text-center">Featured <span class="text-gradient">Projects</span></h3>
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Project 1: Sherlock Automator -->
-                <div class="glass p-8 group flex flex-col h-full hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] bg-surface">
+                <div class="glass-card p-8 group flex flex-col h-full transition-all duration-500 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] bg-surface" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
                     <div class="flex justify-between items-start mb-4">
                         <h4 class="text-2xl font-bold group-hover:text-primary transition-colors">Sherlock Automator</h4>
                         <span class="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">Nov 2025</span>
@@ -185,7 +189,7 @@
                 </div>
 
                 <!-- Project 2: Gen AI Platform -->
-                <div class="glass p-8 group flex flex-col h-full hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] bg-surface">
+                <div class="glass-card p-8 group flex flex-col h-full transition-all duration-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] bg-surface" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
                     <div class="flex justify-between items-start mb-4">
                         <h4 class="text-2xl font-bold group-hover:text-secondary transition-colors">Gen AI Platform</h4>
                         <span class="text-xs font-mono text-secondary bg-secondary/10 px-2 py-1 rounded">Nov 2025</span>
@@ -234,55 +238,124 @@
             </div>
         </section>
 
-        <!-- Certificates & Contact -->
-        <section id="contact" class="py-20 reveal border-t border-white/10 mt-20 relative">
-            <div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none"></div>
-            <div class="grid md:grid-cols-2 gap-10">
-                <div>
-                    <h3 class="text-3xl font-bold mb-6">Trainings & <span class="text-gradient">Certifications</span></h3>
-                    <ul class="space-y-4">
-                        <li class="p-4 glass hover:bg-white/5 transition-all">
-                            <h4 class="font-bold">Master Generative AI / Build Gen AI Apps</h4>
-                            <p class="text-sm text-textMuted">Infosys Springboard (Aug 2025)</p>
-                        </li>
-                        <li class="p-4 glass hover:bg-white/5 transition-all">
-                            <h4 class="font-bold">Microsoft Azure Fundamentals</h4>
-                            <p class="text-sm text-textMuted">Microsoft (Jan 2025)</p>
-                        </li>
-                        <li class="p-4 glass hover:bg-white/5 transition-all">
-                            <h4 class="font-bold">DSA using Java Training</h4>
-                            <p class="text-sm text-textMuted">Cipher Schools (June 2025 – July 2025)</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="flex flex-col justify-center items-center text-center p-8 glass">
-                    <h3 class="text-3xl font-bold mb-4">Let's Connect</h3>
-                    <p class="text-textMuted mb-6 leading-relaxed max-w-sm">Have a query or want to build scalable infrastructure? Send me a message!</p>
-                    
-                    <!-- Contact Form -->
-                    <form action="https://formsubmit.co/grewalkomalpreet@gmail.com" method="POST" class="w-full max-w-sm space-y-4 mb-8 text-left">
-                        <input type="text" name="name" placeholder="Your Name" class="w-full px-4 py-3 rounded-lg bg-surface border border-slate-300 dark:border-white/10 text-slate-900 dark:text-white focus:outline-none focus:border-primary transition-colors text-sm" required>
-                        <input type="email" name="email" placeholder="Your Email" class="w-full px-4 py-3 rounded-lg bg-surface border border-slate-300 dark:border-white/10 text-slate-900 dark:text-white focus:outline-none focus:border-primary transition-colors text-sm" required>
-                        <textarea name="message" placeholder="Your Query..." rows="3" class="w-full px-4 py-3 rounded-lg bg-surface border border-slate-300 dark:border-white/10 text-slate-900 dark:text-white focus:outline-none focus:border-primary transition-colors resize-none text-sm" required></textarea>
-                        <input type="hidden" name="_subject" value="New Query from Portfolio">
-                        <button type="submit" class="w-full py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-bold hover:scale-[1.02] transition-transform shadow-[0_0_15px_rgba(139,92,246,0.3)] text-sm">Send Message</button>
-                    </form>
+        <!-- Education & Certifications Timeline -->
+        <section id="education" class="py-24 reveal relative" style="--glow-color: rgba(20, 184, 166, 0.5);">
+            <div class="absolute inset-0 bg-gradient-to-b from-teal-500/5 to-transparent pointer-events-none"></div>
+            <h3 class="text-3xl md:text-4xl font-bold mb-16 text-center">Trainings & <span class="text-gradient">Certifications</span></h3>
+            
+            <div class="max-w-4xl mx-auto relative px-4" id="timeline-container">
+                <!-- Vertical Line Background -->
+                <div class="absolute left-8 md:left-1/2 top-4 bottom-4 w-1 bg-white/10 dark:bg-white/5 -translate-x-1/2 rounded"></div>
+                <!-- Glowing Fill Line -->
+                <div class="absolute left-8 md:left-1/2 top-4 w-1 bg-gradient-to-b from-primary to-teal-400 -translate-x-1/2 rounded transition-all duration-300 ease-out z-0" id="timeline-progress" style="height: 0%;"></div>
 
-                    <div class="w-full h-px bg-white/10 mb-6 max-w-sm"></div>
-
-                    <div class="flex flex-col md:flex-row justify-center gap-2 md:gap-4 items-center">
-                        <a href="mailto:grewalkomalpreet@gmail.com" class="text-sm font-medium hover:text-primary transition-colors">grewalkomalpreet@gmail.com</a>
-                        <span class="hidden md:block text-white/20">•</span>
-                        <span class="text-sm font-mono text-primary">+91 8209177537</span>
+                <!-- Timeline Items -->
+                <div class="space-y-12 relative z-10 pb-8">
+                    <!-- Item 1 (Right on desktop) -->
+                    <div class="relative flex items-center justify-start md:justify-end w-full timeline-item group">
+                        <div class="absolute left-8 md:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full border-4 border-background bg-slate-300 dark:bg-slate-700 transition-all duration-500 timeline-dot z-20"></div>
+                        <div class="w-full md:w-5/12 pl-16 md:pl-0 md:ml-12">
+                            <div class="glass-panel p-6 shadow-lg group-hover:shadow-[0_0_25px_var(--glow-color)] transition-all duration-300 rounded-2xl transform md:group-hover:translate-x-2" data-tilt data-tilt-max="3" data-tilt-glare="true" data-tilt-max-glare="0.05">
+                                <span class="text-xs font-mono text-teal-600 dark:text-teal-400 bg-teal-400/10 px-3 py-1 rounded-full mb-3 inline-block border border-teal-500/20">Aug 2025</span>
+                                <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-2">Master Gen AI / Build Gen AI Apps</h4>
+                                <p class="text-sm font-medium text-primary mb-3">Infosys Springboard</p>
+                                <p class="text-sm text-textMuted">Specialized training focusing on Generative AI architectures, LLM fine-tuning, and scalable application deployment.</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="flex gap-4 mt-6">
-                        <a href="https://www.linkedin.com/in/komalpreetgrewal" target="_blank" class="p-3 bg-white/5 rounded-full hover:bg-primary/20 transition-all text-sm font-medium">LinkedIn</a>
-                        <a href="https://github.com/Komalpr3t" target="_blank" class="p-3 bg-white/5 rounded-full hover:bg-secondary/20 transition-all text-sm font-medium">GitHub</a>
+                    <!-- Item 2 (Left on desktop) -->
+                    <div class="relative flex items-center justify-start md:justify-start w-full timeline-item group">
+                        <div class="absolute left-8 md:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full border-4 border-background bg-slate-300 dark:bg-slate-700 transition-all duration-500 timeline-dot z-20"></div>
+                        <div class="w-full md:w-5/12 pl-16 md:pl-0 md:mr-12">
+                            <div class="glass-panel p-6 shadow-lg group-hover:shadow-[0_0_25px_rgba(59,130,246,0.5)] transition-all duration-300 rounded-2xl transform md:group-hover:-translate-x-2" data-tilt data-tilt-max="3" data-tilt-glare="true" data-tilt-max-glare="0.05">
+                                <span class="text-xs font-mono text-blue-600 dark:text-blue-400 bg-blue-400/10 px-3 py-1 rounded-full mb-3 inline-block border border-blue-500/20">Jan 2025</span>
+                                <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-2">Microsoft Azure Fundamentals</h4>
+                                <p class="text-sm font-medium text-primary mb-3">Microsoft</p>
+                                <p class="text-sm text-textMuted">Core cloud computing concepts, Azure architecture, and management of core services and solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 (Right on desktop) -->
+                    <div class="relative flex items-center justify-start md:justify-end w-full timeline-item group">
+                        <div class="absolute left-8 md:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full border-4 border-background bg-slate-300 dark:bg-slate-700 transition-all duration-500 timeline-dot z-20"></div>
+                        <div class="w-full md:w-5/12 pl-16 md:pl-0 md:ml-12">
+                            <div class="glass-panel p-6 shadow-lg group-hover:shadow-[0_0_25px_var(--glow-color)] transition-all duration-300 rounded-2xl transform md:group-hover:translate-x-2" data-tilt data-tilt-max="3" data-tilt-glare="true" data-tilt-max-glare="0.05">
+                                <span class="text-xs font-mono text-teal-600 dark:text-teal-400 bg-teal-400/10 px-3 py-1 rounded-full mb-3 inline-block border border-teal-500/20">June 2025 – July 2025</span>
+                                <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-2">DSA using Java Training</h4>
+                                <p class="text-sm font-medium text-primary mb-3">Cipher Schools</p>
+                                <p class="text-sm text-textMuted">Intensive data structures and algorithms bootcamp leveraging Java for complex problem solving.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 reveal border-t border-slate-200 dark:border-white/10 mt-10 relative" style="--glow-color: rgba(236, 72, 153, 0.5);">
+            <div class="absolute inset-0 bg-gradient-to-b from-pink-500/5 to-transparent pointer-events-none"></div>
+            
+            <div class="max-w-2xl mx-auto flex flex-col justify-center items-center text-center p-10 glass-panel shadow-[0_0_40px_rgba(0,0,0,0.05)] dark:shadow-[0_0_40px_rgba(255,255,255,0.02)] relative z-10" data-tilt data-tilt-max="2" data-tilt-glare="true" data-tilt-max-glare="0.05">
+                <div class="w-16 h-16 rounded-full bg-pink-500/20 flex items-center justify-center mb-6 text-pink-500">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                </div>
+                <h3 class="text-3xl md:text-4xl font-bold mb-4">Let's <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500">Connect</span></h3>
+                <p class="text-textMuted mb-8 leading-relaxed">Have a query or want to build scalable infrastructure? Send me a direct message!</p>
+                
+                <!-- Contact Form -->
+                <form action="https://formsubmit.co/grewalkomalpreet@gmail.com" method="POST" class="w-full space-y-4 mb-10 text-left">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <input type="text" name="name" placeholder="Your Name" class="w-full px-5 py-3 rounded-xl bg-surface border border-slate-300 dark:border-white/10 text-slate-900 dark:text-white focus:outline-none focus:border-pink-500 focus:ring-1 focus:ring-pink-500 transition-all text-sm" required>
+                        <input type="email" name="email" placeholder="Your Email" class="w-full px-5 py-3 rounded-xl bg-surface border border-slate-300 dark:border-white/10 text-slate-900 dark:text-white focus:outline-none focus:border-pink-500 focus:ring-1 focus:ring-pink-500 transition-all text-sm" required>
+                    </div>
+                    <textarea name="message" placeholder="Your Query..." rows="4" class="w-full px-5 py-3 rounded-xl bg-surface border border-slate-300 dark:border-white/10 text-slate-900 dark:text-white focus:outline-none focus:border-pink-500 focus:ring-1 focus:ring-pink-500 transition-all resize-none text-sm" required></textarea>
+                    <input type="hidden" name="_subject" value="New Query from Portfolio">
+                    <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold hover:shadow-[0_0_20px_rgba(236,72,153,0.4)] transition-all transform hover:-translate-y-1">Send Message</button>
+                </form>
+
+                <div class="w-full h-px bg-slate-200 dark:bg-white/10 mb-8"></div>
+
+                <div class="flex flex-col md:flex-row justify-center gap-4 md:gap-6 items-center w-full">
+                    <a href="mailto:grewalkomalpreet@gmail.com" class="text-sm font-medium hover:text-pink-500 transition-colors flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> grewalkomalpreet@gmail.com
+                    </a>
+                    <span class="hidden md:block text-slate-300 dark:text-white/20">•</span>
+                    <a href="tel:+918209177537" class="text-sm font-mono text-pink-500 hover:text-purple-500 transition-colors flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg> +91 8209177537
+                    </a>
+                </div>
+
+                <div class="flex gap-4 mt-8">
+                    <a href="https://www.linkedin.com/in/komalpreetgrewal" target="_blank" class="magnetic-btn p-4 glass-card rounded-full hover:text-[#0A66C2] transition-colors shadow-lg">
+                        <svg class="w-5 h-5 fill-currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="https://github.com/Komalpr3t" target="_blank" class="magnetic-btn p-4 glass-card rounded-full hover:text-purple-500 transition-colors shadow-lg">
+                        <svg class="w-5 h-5 fill-currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Floating Navbar Dock -->
+        <nav id="floating-nav" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 glass-card px-6 py-3 rounded-full flex items-center gap-6 translate-y-32 opacity-0 transition-all duration-500 shadow-[0_10px_40px_rgba(139,92,246,0.3)]">
+            <a href="#home" class="p-2 text-textMuted hover:text-primary transition-colors tooltip relative group">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+            </a>
+            <a href="#skills" class="p-2 text-textMuted hover:text-primary transition-colors tooltip relative group">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+            </a>
+            <a href="#projects" class="p-2 text-textMuted hover:text-primary transition-colors tooltip relative group">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+            </a>
+            <a href="#education" class="p-2 text-textMuted hover:text-primary transition-colors tooltip relative group">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
+            </a>
+            <a href="#contact" class="p-2 text-textMuted hover:text-primary transition-colors tooltip relative group">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            </a>
+        </nav>
 
     <script type="module" src="/main.js"></script>
   </body>

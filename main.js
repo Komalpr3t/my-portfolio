@@ -37,6 +37,162 @@ export function initScrollReveal() {
 document.addEventListener('DOMContentLoaded', () => {
     initScrollReveal();
 
+    // 2. Timeline Progress & Glow Logic
+    const timelineContainer = document.getElementById('timeline-container');
+    const timelineProgress = document.getElementById('timeline-progress');
+    const timelineDots = document.querySelectorAll('.timeline-dot');
+
+    if (timelineContainer && timelineProgress) {
+        window.addEventListener('scroll', () => {
+            const containerRect = timelineContainer.getBoundingClientRect();
+            // Start filling when the top of the container hits the middle of the screen
+            const fillStart = window.innerHeight * 0.6; 
+            
+            if (containerRect.top < fillStart) {
+                const scrolledLength = fillStart - containerRect.top;
+                let percentage = (scrolledLength / containerRect.height) * 100;
+                percentage = Math.max(0, Math.min(100, percentage));
+                timelineProgress.style.height = percentage + '%';
+            } else {
+                timelineProgress.style.height = '0%';
+            }
+
+            // Light up dots
+            timelineDots.forEach(dot => {
+                const dotRect = dot.getBoundingClientRect();
+                if (dotRect.top < fillStart + 50) { // Slight offset for triggering
+                    dot.classList.add('bg-primary', 'shadow-[0_0_15px_rgba(139,92,246,0.6)]');
+                    dot.classList.remove('bg-slate-300', 'dark:bg-slate-700');
+                } else {
+                    dot.classList.remove('bg-primary', 'shadow-[0_0_15px_rgba(139,92,246,0.6)]');
+                    dot.classList.add('bg-slate-300', 'dark:bg-slate-700');
+                }
+            });
+        });
+    }
+
+    // 3. Floating Nav Bar Logic
+    const floatingNav = document.getElementById('floating-nav');
+    const topNavbar = document.getElementById('navbar');
+    const heroSection = document.getElementById('home');
+
+    if (floatingNav && heroSection) {
+        window.addEventListener('scroll', () => {
+            const heroRect = heroSection.getBoundingClientRect();
+            if (heroRect.bottom < 100) { // Scrolled past hero
+                floatingNav.classList.remove('translate-y-32', 'opacity-0');
+                if (topNavbar) topNavbar.classList.add('-translate-y-full'); // Hide top nav
+            } else { // In hero
+                floatingNav.classList.add('translate-y-32', 'opacity-0');
+                if (topNavbar) topNavbar.classList.remove('-translate-y-full'); // Show top nav
+            }
+        });
+    }
+
+    // 4. Magnetic Buttons Physics
+    const magneticBtns = document.querySelectorAll('.magnetic-btn');
+    magneticBtns.forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            // Elastic distance formula
+            btn.style.transform = `translate(${x * 0.4}px, ${y * 0.4}px) scale(1.1)`;
+        });
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = `translate(0px, 0px) scale(1)`;
+            btn.style.transition = 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        });
+        btn.addEventListener('mouseenter', () => {
+            btn.style.transition = 'transform 0.1s linear';
+        });
+    });
+
+    // 1. Interactive Tech Background via tsParticles
+    if (typeof tsParticles !== 'undefined') {
+        tsParticles.load("tsparticles", {
+            fpsLimit: 60,
+            interactivity: {
+                events: {
+                    onHover: { enable: true, mode: "grab" },
+                },
+                modes: {
+                    grab: { distance: 200, links: { opacity: 0.5 } }
+                }
+            },
+            particles: {
+                color: { value: "#8b5cf6" }, // Primary purple
+                links: {
+                    color: "#3b82f6", // Secondary blue
+                    distance: 150,
+                    enable: true,
+                    opacity: 0.2,
+                    width: 1
+                },
+                move: {
+                    direction: "none",
+                    enable: true,
+                    outModes: "bounce",
+                    random: true,
+                    speed: 0.8,
+                    straight: false
+                },
+                number: {
+                    density: { enable: true, area: 800 },
+                    value: 60 // Sparse tech grid
+                },
+                opacity: { value: 0.5 },
+                shape: { type: "circle" },
+                size: { value: { min: 1, max: 3 } }
+            },
+            detectRetina: true
+        });
+    }
+
+    // 1. Interactive Tech Background via tsParticles
+    if (typeof tsParticles !== 'undefined') {
+        tsParticles.load("tsparticles", {
+            fpsLimit: 60,
+            interactivity: {
+                events: {
+                    onHover: { enable: true, mode: "grab" },
+                },
+                modes: {
+                    grab: {
+                        distance: 200,
+                        links: { opacity: 0.5 }
+                    }
+                }
+            },
+            particles: {
+                color: { value: "#8b5cf6" }, // Primary purple
+                links: {
+                    color: "#3b82f6", // Secondary blue
+                    distance: 150,
+                    enable: true,
+                    opacity: 0.2,
+                    width: 1
+                },
+                move: {
+                    direction: "none",
+                    enable: true,
+                    outModes: "bounce",
+                    random: true,
+                    speed: 0.8,
+                    straight: false
+                },
+                number: {
+                    density: { enable: true, area: 800 },
+                    value: 50 // Sparse tech grid
+                },
+                opacity: { value: 0.5 },
+                shape: { type: "circle" },
+                size: { value: { min: 1, max: 3 } }
+            },
+            detectRetina: true
+        });
+    }
+
     // Theme Toggle Logic
     const themeToggleBtn = document.getElementById('theme-toggle');
     const htmlElement = document.documentElement;
