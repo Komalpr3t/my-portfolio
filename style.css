@@ -3,8 +3,24 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-bg: 255 255 255;
+    --color-text: 15 23 42;
+    --color-text-muted: 71 85 105;
+    --color-surface: rgba(0, 0, 0, 0.05); /* Light glass */
+    --color-surface-hover: rgba(0, 0, 0, 0.08);
+  }
+  
+  .dark {
+    --color-bg: 10 10 10;
+    --color-text: 248 250 252;
+    --color-text-muted: 148 163 184;
+    --color-surface: rgba(255, 255, 255, 0.05); /* Dark glass */
+    --color-surface-hover: rgba(255, 255, 255, 0.1);
+  }
+
   body {
-    @apply bg-background text-text font-sans antialiased overflow-x-hidden;
+    @apply bg-background text-text font-sans antialiased overflow-x-hidden transition-colors duration-500;
   }
 }
 

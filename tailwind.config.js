@@ -4,16 +4,17 @@ export default {
     "./index.html",
     "./main.js",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        background: '#0a0a0a',
-        surface: 'rgba(255, 255, 255, 0.05)',
-        surfaceHover: 'rgba(255, 255, 255, 0.1)',
+        background: 'rgb(var(--color-bg) / <alpha-value>)',
+        surface: 'var(--color-surface)',
+        surfaceHover: 'var(--color-surface-hover)',
         primary: '#8b5cf6',
         secondary: '#3b82f6',
-        text: '#f8fafc',
-        textMuted: '#94a3b8'
+        text: 'rgb(var(--color-text) / <alpha-value>)',
+        textMuted: 'rgb(var(--color-text-muted) / <alpha-value>)'
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
