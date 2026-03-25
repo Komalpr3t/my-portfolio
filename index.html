@@ -199,10 +199,26 @@
                 </div>
                 <div class="flex flex-col justify-center items-center text-center p-8 glass">
                     <h3 class="text-3xl font-bold mb-4">Let's Connect</h3>
-                    <p class="text-textMuted mb-8 leading-relaxed max-w-sm">Ready to build scalable infrastructure and innovative solutions? Reach out!</p>
-                    <a href="mailto:grewalkomalpreet@gmail.com" class="px-8 py-3 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-bold hover:scale-105 transition-transform shadow-[0_0_15px_rgba(139,92,246,0.3)]">grewalkomalpreet@gmail.com</a>
-                    <p class="mt-4 text-sm font-mono text-primary">+91 8209177537</p>
-                    <div class="flex gap-4 mt-8">
+                    <p class="text-textMuted mb-6 leading-relaxed max-w-sm">Have a query or want to build scalable infrastructure? Send me a message!</p>
+                    
+                    <!-- Contact Form -->
+                    <form action="https://formsubmit.co/grewalkomalpreet@gmail.com" method="POST" class="w-full max-w-sm space-y-4 mb-8 text-left">
+                        <input type="text" name="name" placeholder="Your Name" class="w-full px-4 py-3 rounded-lg bg-background/50 border border-white/10 text-white focus:outline-none focus:border-primary transition-colors text-sm" required>
+                        <input type="email" name="email" placeholder="Your Email" class="w-full px-4 py-3 rounded-lg bg-background/50 border border-white/10 text-white focus:outline-none focus:border-primary transition-colors text-sm" required>
+                        <textarea name="message" placeholder="Your Query..." rows="3" class="w-full px-4 py-3 rounded-lg bg-background/50 border border-white/10 text-white focus:outline-none focus:border-primary transition-colors resize-none text-sm" required></textarea>
+                        <input type="hidden" name="_subject" value="New Query from Portfolio">
+                        <button type="submit" class="w-full py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-bold hover:scale-[1.02] transition-transform shadow-[0_0_15px_rgba(139,92,246,0.3)] text-sm">Send Message</button>
+                    </form>
+
+                    <div class="w-full h-px bg-white/10 mb-6 max-w-sm"></div>
+
+                    <div class="flex flex-col md:flex-row justify-center gap-2 md:gap-4 items-center">
+                        <a href="mailto:grewalkomalpreet@gmail.com" class="text-sm font-medium hover:text-primary transition-colors">grewalkomalpreet@gmail.com</a>
+                        <span class="hidden md:block text-white/20">•</span>
+                        <span class="text-sm font-mono text-primary">+91 8209177537</span>
+                    </div>
+
+                    <div class="flex gap-4 mt-6">
                         <a href="https://linkedin.com/in/komalpreetgrewal" target="_blank" class="p-3 bg-white/5 rounded-full hover:bg-primary/20 transition-all text-sm font-medium">LinkedIn</a>
                         <a href="https://github.com/Komalpr3t" target="_blank" class="p-3 bg-white/5 rounded-full hover:bg-secondary/20 transition-all text-sm font-medium">GitHub</a>
                     </div>
