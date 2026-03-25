@@ -161,59 +161,105 @@
         <section id="projects" class="py-20 reveal">
             <h3 class="text-3xl font-bold mb-12 text-center">Featured <span class="text-gradient">Projects</span></h3>
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="glass p-8 group">
+                <!-- Project 1: Sherlock Automator -->
+                <div class="glass p-6 group flex flex-col h-full hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] bg-surface">
+                    <!-- Preview Image Wrapper -->
+                    <div class="w-full h-48 sm:h-56 bg-background/80 rounded-xl mb-6 overflow-hidden relative flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(139,92,246,0.2)] transition-shadow">
+                        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent flex flex-col items-center justify-center text-textMuted/50 group-hover:scale-105 transition-transform duration-700">
+                            <svg class="w-10 h-10 mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            <span class="text-xs font-mono">Insert Project Image Here</span>
+                        </div>
+                        <img src="" alt="Sherlock Automator Preview" class="w-full h-full object-cover relative z-10 opacity-0 transition-opacity duration-300" onload="this.style.opacity=1" onerror="this.style.opacity=0" />
+                    </div>
+
                     <div class="flex justify-between items-start mb-4">
                         <h4 class="text-2xl font-bold group-hover:text-primary transition-colors">Sherlock Automator</h4>
                         <span class="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">Nov 2025</span>
                     </div>
                     <p class="text-sm font-medium text-textMuted mb-4">AI Driven Self-Healing Kubernetes Agent</p>
-                    <ul class="text-textMuted text-sm space-y-2 mb-6 list-disc list-inside">
+                    <ul class="text-textMuted text-sm space-y-2 mb-6 list-disc list-inside flex-grow">
                         <li>Developed an AI-powered Kubernetes agent detecting failures via Prometheus.</li>
-                        <li>Automated Root Cause Analysis utilizing local LLMs (Llama 3.2 / TinyLlama).</li>
-                        <li>Generated automated infrastructure fixes and GitHub PRs remediating issues.</li>
+                        <li>Automated Root Cause Analysis utilizing local LLMs.</li>
+                        <li>Generated automated infrastructure fixes and GitHub PRs.</li>
                     </ul>
                     <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="text-xs bg-white/5 px-2 py-1 rounded border border-white/10">Kubernetes</span>
-                        <span class="text-xs bg-white/5 px-2 py-1 rounded border border-white/10">Python</span>
-                        <span class="text-xs bg-white/5 px-2 py-1 rounded border border-white/10">Llama 3.2</span>
+                        <span class="text-xs bg-surface px-2 py-1 rounded border border-white/10 opacity-70">Kubernetes</span>
+                        <span class="text-xs bg-surface px-2 py-1 rounded border border-white/10 opacity-70">Python</span>
+                        <span class="text-xs bg-surface px-2 py-1 rounded border border-white/10 opacity-70">Llama 3.2</span>
+                    </div>
+                    <div class="flex gap-4 mt-auto pt-4 border-t border-text/10">
+                        <a href="#" class="text-sm font-semibold text-text hover:text-primary transition-colors flex items-center gap-1"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg> Live Demo</a>
+                        <a href="#" class="text-sm font-semibold text-text hover:text-secondary transition-colors flex items-center gap-1"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg> Source Code</a>
                     </div>
                 </div>
 
-                <div class="glass p-8 group">
+                <!-- Project 2: Gen AI Platform -->
+                <div class="glass p-6 group flex flex-col h-full hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] bg-surface">
+                    <!-- Preview Image Wrapper -->
+                    <div class="w-full h-48 sm:h-56 bg-background/80 rounded-xl mb-6 overflow-hidden relative flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-shadow">
+                        <div class="absolute inset-0 bg-gradient-to-bl from-secondary/10 to-transparent flex flex-col items-center justify-center text-textMuted/50 group-hover:scale-105 transition-transform duration-700">
+                            <svg class="w-10 h-10 mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            <span class="text-xs font-mono">Insert Project Image Here</span>
+                        </div>
+                        <img src="" alt="Gen AI Platform Preview" class="w-full h-full object-cover relative z-10 opacity-0 transition-opacity duration-300" onload="this.style.opacity=1" onerror="this.style.opacity=0" />
+                    </div>
+
                     <div class="flex justify-between items-start mb-4">
                         <h4 class="text-2xl font-bold group-hover:text-secondary transition-colors">Gen AI Platform</h4>
                         <span class="text-xs font-mono text-secondary bg-secondary/10 px-2 py-1 rounded">Nov 2025</span>
                     </div>
                     <p class="text-sm font-medium text-textMuted mb-4">Self-Hosted Kubernetes AI Platform</p>
-                    <ul class="text-textMuted text-sm space-y-2 mb-6 list-disc list-inside">
+                    <ul class="text-textMuted text-sm space-y-2 mb-6 list-disc list-inside flex-grow">
                         <li>Built a local AI platform deploying TinyLlama using Ollama on Minikube.</li>
                         <li>Implemented Open WebUI for interacting with the LLM via Kubernetes Services.</li>
                         <li>Configured persistent storage (PVCs) retaining model data across restarts.</li>
                     </ul>
                     <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="text-xs bg-white/5 px-2 py-1 rounded border border-white/10">Minikube</span>
-                        <span class="text-xs bg-white/5 px-2 py-1 rounded border border-white/10">Ollama</span>
-                        <span class="text-xs bg-white/5 px-2 py-1 rounded border border-white/10">Docker</span>
+                        <span class="text-xs bg-surface px-2 py-1 rounded border border-white/10 opacity-70">Minikube</span>
+                        <span class="text-xs bg-surface px-2 py-1 rounded border border-white/10 opacity-70">Ollama</span>
+                        <span class="text-xs bg-surface px-2 py-1 rounded border border-white/10 opacity-70">Docker</span>
+                    </div>
+                    <div class="flex gap-4 mt-auto pt-4 border-t border-text/10">
+                        <a href="#" class="text-sm font-semibold text-text hover:text-primary transition-colors flex items-center gap-1"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg> Live Demo</a>
+                        <a href="#" class="text-sm font-semibold text-text hover:text-secondary transition-colors flex items-center gap-1"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg> Source Code</a>
                     </div>
                 </div>
 
-                <div class="glass p-8 group md:col-span-2 relative overflow-hidden">
+                <!-- Project 3: E-Commerce Deployment (Wide) -->
+                <div class="glass p-6 group md:col-span-2 flex flex-col md:flex-row gap-8 hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] relative bg-surface overflow-hidden">
                     <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 pointer-events-none"></div>
-                    <div class="flex justify-between items-start mb-4 relative z-10">
-                        <h4 class="text-2xl font-bold group-hover:text-primary transition-colors">E-Commerce Deployment</h4>
-                        <span class="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">Oct 2025</span>
+                    
+                    <!-- Wide Preview Image Wrapper -->
+                    <div class="w-full md:w-1/2 h-56 md:h-auto bg-background/80 rounded-xl overflow-hidden relative flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(139,92,246,0.2)] transition-shadow z-10">
+                        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 flex flex-col items-center justify-center text-textMuted/50 group-hover:scale-105 transition-transform duration-700">
+                            <svg class="w-12 h-12 mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            <span class="text-xs font-mono">Insert Wide Project Image</span>
+                        </div>
+                        <img src="" alt="E-Commerce Deployment Preview" class="w-full h-full object-cover relative z-10 opacity-0 transition-opacity duration-300" onload="this.style.opacity=1" onerror="this.style.opacity=0" />
                     </div>
-                    <p class="text-sm font-medium text-textMuted mb-4 relative z-10">End-to-End DevOps using GitOps</p>
-                    <ul class="text-textMuted text-sm space-y-2 mb-6 list-disc list-inside relative z-10">
-                        <li>Implemented complete DevOps lifecycle for a Node.js application.</li>
-                        <li>Provisioned AWS infra (VPC, EKS) using Terraform IaC.</li>
-                        <li>Automated CI/CD using GitHub Actions for builds and ArgoCD for deployment.</li>
-                    </ul>
-                    <div class="flex flex-wrap gap-2 mb-6 relative z-10">
-                        <span class="text-xs bg-white/5 px-2 py-1 rounded border border-white/10">AWS (EKS)</span>
-                        <span class="text-xs bg-white/5 px-2 py-1 rounded border border-white/10">Terraform</span>
-                        <span class="text-xs bg-white/5 px-2 py-1 rounded border border-white/10">ArgoCD</span>
-                        <span class="text-xs bg-white/5 px-2 py-1 rounded border border-white/10">GitHub Actions</span>
+
+                    <!-- Content -->
+                    <div class="w-full md:w-1/2 flex flex-col z-10">
+                        <div class="flex justify-between items-start mb-4">
+                            <h4 class="text-2xl font-bold group-hover:text-primary transition-colors">E-Commerce Deployment</h4>
+                            <span class="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">Oct 2025</span>
+                        </div>
+                        <p class="text-sm font-medium text-textMuted mb-4">End-to-End DevOps using GitOps</p>
+                        <ul class="text-textMuted text-sm space-y-3 mb-6 list-disc list-inside flex-grow">
+                            <li>Implemented complete DevOps lifecycle for a Node.js application.</li>
+                            <li>Provisioned AWS infra (VPC, EKS) using Terraform IaC.</li>
+                            <li>Automated CI/CD using GitHub Actions for builds and ArgoCD.</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs bg-surface px-2 py-1 rounded border border-white/10 opacity-70">AWS (EKS)</span>
+                            <span class="text-xs bg-surface px-2 py-1 rounded border border-white/10 opacity-70">Terraform</span>
+                            <span class="text-xs bg-surface px-2 py-1 rounded border border-white/10 opacity-70">ArgoCD</span>
+                            <span class="text-xs bg-surface px-2 py-1 rounded border border-white/10 opacity-70">GitHub</span>
+                        </div>
+                        <div class="flex gap-4 mt-auto pt-4 border-t border-text/10">
+                            <a href="#" class="text-sm font-semibold text-text hover:text-primary transition-colors flex items-center gap-1"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg> Live Demo</a>
+                            <a href="#" class="text-sm font-semibold text-text hover:text-secondary transition-colors flex items-center gap-1"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg> Source Code</a>
+                        </div>
                     </div>
                 </div>
             </div>
