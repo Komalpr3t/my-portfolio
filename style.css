@@ -31,7 +31,7 @@
     @apply bg-surface backdrop-blur-md border border-white/5 dark:border-white/10 rounded-2xl shadow-xl transition-all duration-300;
   }
   .glass-panel {
-    @apply bg-surface/50 backdrop-blur-lg border border-white/10 dark:border-white/5 rounded-3xl shadow-2xl relative overflow-hidden transition-all duration-300;
+    @apply bg-surface backdrop-blur-lg border border-white/10 dark:border-white/5 rounded-3xl shadow-2xl relative overflow-hidden transition-all duration-300;
   }
   .glass-card {
     @apply bg-surface backdrop-blur-sm border border-white/5 dark:border-white/10 rounded-2xl shadow-lg transition-all duration-500 relative z-10;
