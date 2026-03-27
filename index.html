@@ -165,6 +165,11 @@
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Project 1: Sherlock Automator -->
                 <div class="glass-card p-8 group flex flex-col h-full transition-all duration-500 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] bg-surface" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
+                    <!-- Preview Image Wrapper -->
+                    <div class="w-full h-48 sm:h-56 bg-background/80 rounded-xl mb-6 overflow-hidden relative group-hover:shadow-[0_0_20px_rgba(139,92,246,0.2)] transition-shadow select-none shrink-0">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800" alt="Sherlock Automator Preview" class="w-full h-full object-cover relative z-10 transition-transform duration-700 group-hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent z-20 pointer-events-none"></div>
+                    </div>
                     <div class="flex justify-between items-start mb-4">
                         <h4 class="text-2xl font-bold group-hover:text-primary transition-colors">Sherlock Automator</h4>
                         <span class="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">Nov 2025</span>
@@ -190,6 +195,11 @@
 
                 <!-- Project 2: Gen AI Platform -->
                 <div class="glass-card p-8 group flex flex-col h-full transition-all duration-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] bg-surface" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
+                    <!-- Preview Image Wrapper -->
+                    <div class="w-full h-48 sm:h-56 bg-background/80 rounded-xl mb-6 overflow-hidden relative group-hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-shadow select-none shrink-0">
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&q=80&w=800" alt="Gen AI Platform Preview" class="w-full h-full object-cover relative z-10 transition-transform duration-700 group-hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent z-20 pointer-events-none"></div>
+                    </div>
                     <div class="flex justify-between items-start mb-4">
                         <h4 class="text-2xl font-bold group-hover:text-secondary transition-colors">Gen AI Platform</h4>
                         <span class="text-xs font-mono text-secondary bg-secondary/10 px-2 py-1 rounded">Nov 2025</span>
@@ -214,12 +224,19 @@
                 </div>
 
                 <!-- Project 3: E-Commerce Deployment -->
-                <div class="glass p-8 group flex flex-col h-full hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] relative bg-surface overflow-hidden md:col-span-2">
+                <div class="glass-card p-8 group flex flex-col md:flex-row gap-8 h-full transition-all duration-500 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] relative bg-surface overflow-hidden md:col-span-2" data-tilt data-tilt-max="2" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
                     <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 pointer-events-none"></div>
-                    <div class="flex justify-between items-start mb-4 relative z-10">
-                        <h4 class="text-2xl font-bold group-hover:text-primary transition-colors">E-Commerce Deployment</h4>
-                        <span class="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">Oct 2025</span>
+                    
+                    <div class="w-full md:w-1/2 h-56 md:h-auto bg-background/80 rounded-xl overflow-hidden relative group-hover:shadow-[0_0_20px_rgba(139,92,246,0.2)] transition-shadow z-10 select-none shrink-0">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800" alt="E-Commerce Deployment Preview" class="w-full h-full object-cover relative z-10 transition-transform duration-700 group-hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-surface z-20 pointer-events-none hidden md:block flex-shrink-0"></div>
                     </div>
+
+                    <div class="w-full md:w-1/2 flex flex-col justify-center z-10">
+                        <div class="flex justify-between items-start mb-4 relative z-10">
+                            <h4 class="text-2xl font-bold group-hover:text-primary transition-colors">E-Commerce Deployment</h4>
+                            <span class="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">Oct 2025</span>
+                        </div>
                     <p class="text-sm font-medium text-textMuted mb-4 relative z-10">End-to-End DevOps using GitOps</p>
                     <ul class="text-textMuted text-sm space-y-3 mb-6 list-disc list-inside flex-grow relative z-10">
                         <li>Implemented complete DevOps lifecycle for a Node.js application.</li>
@@ -316,11 +333,7 @@
                                 <span class="text-xs font-mono text-teal-600 dark:text-teal-400 bg-teal-400/10 px-3 py-1 rounded-full mb-3 inline-block border border-teal-500/20">June 2025 – July 2025</span>
                                 <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-2">DSA using Java Training</h4>
                                 <p class="text-sm font-medium text-primary mb-3">Cipher Schools</p>
-                                <p class="text-sm text-textMuted mb-4">Intensive data structures and algorithms bootcamp leveraging Java for complex problem solving.</p>
-                                <a href="#" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-teal-600 dark:text-teal-400 hover:text-primary transition-colors">
-                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                                    View Certificate
-                                </a>
+                                <p class="text-sm text-textMuted">Intensive data structures and algorithms bootcamp leveraging Java for complex problem solving.</p>
                             </div>
                         </div>
                     </div>
